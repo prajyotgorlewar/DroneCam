@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    tools:ignore="ExtraText">
+
+    <org.videolan.libvlc.util.VLCVideoLayout
+        android:id="@+id/video_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        android:orientation="horizontal"
+        android:background="@drawable/rounded_container"
+        android:padding="1dp"
+        android:gravity="center_vertical">
+
+        <EditText
+            android:id="@+id/rtsp_url"
+            android:layout_width="270dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:hint="Enter RTSP URL"
+            android:inputType="textUri"
+            android:padding="10dp"
+            android:textColor="#000000"
+            android:textColorHint="#888888" />
+
+        <ImageButton
+            android:id="@+id/btn_play"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_play"
+            android:contentDescription="Play"
+            android:scaleType="centerInside"/>
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/btn_record"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/video_layout"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="8dp"
+        android:background="@android:color/transparent"
+        android:clickable="true"
+        android:contentDescription="Record / Stop Button"
+        android:focusable="true"
+        android:src="@drawable/ic_record"
+        android:translationY="-30dp" />
+
+    <ImageButton
+        android:id="@+id/btn_pip"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignBottom="@id/video_layout"
+        android:layout_margin="25dp"
+        android:translationY="-5dp"
+        android:layout_alignParentEnd="true"
+        android:background="@android:color/transparent"
+        android:src="@drawable/ic_pip"
+        android:contentDescription="PiP Mode" />
+</RelativeLayout>
